@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoDigital - MLM & Digital Asset Support System</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .active-tab {
+            border-bottom: 3px solid #3b82f6;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans">
+
+    <!-- Header Navigation -->
+    <header class="bg-slate-800 border-b border-slate-700 sticky top-0 z-50">
+        <div class="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-gradient-to-r from-blue-500 to-indigo-600 p-2 rounded-lg">
+                    <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight text-white">CryptoDigital</h1>
+                    <p class="text-xs text-slate-400">MLM & Digital Asset System</p>
+                </div>
+            </div>
+            <button onclick="downloadAppInfo()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1.5 rounded-full flex items-center space-x-1 transition">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                <span>Download</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container (Mobile-first app Layout) -->
+    <main class="flex-1 max-w-md w-full mx-auto p-4 pb-20">
+
+        <!-- Banner Welcome -->
+        <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-2xl p-5 mb-5 shadow-lg relative overflow-hidden">
+            <div class="relative z-10">
+                <span class="bg-white/20 text-white text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full">Official Support Platform</span>
+                <h2 class="text-xl font-extrabold mt-2 text-white">Bangun Aset Digital & Jaringan Bisnis MLM Kamu</h2>
+                <p class="text-xs text-blue-100 mt-1">Platform edukasi, promosi, dan pendataan prospek dalam satu genggaman.</p>
+                <button onclick="switchTab('register')" class="mt-4 bg-white text-blue-600 hover:bg-blue-50 text-xs font-bold px-4 py-2 rounded-lg shadow-md transition">
+                    Gabung Mitra Sekarang
+                </button>
+            </div>
+            <i data-lucide="coins" class="absolute -right-4 -bottom-4 w-32 h-32 text-white/10"></i>
+        </div>
+
+        <!-- TAB CONTENT 1: HOME & KATALOG -->
+        <div id="tab-home" class="tab-content space-y-5">
+            <!-- Quick Stats/Info -->
+            <div class="grid grid-cols-2 gap-3">
+                <div class="bg-slate-800 p-3.5 rounded-xl border border-slate-700/60 flex items-center space-x-3">
+                    <div class="p-2 bg-emerald-500/10 text-emerald-400 rounded-lg">
+                        <i data-lucide="trending-up" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400">Sistem Bisnis</p>
+                        <p class="text-sm font-bold text-white">Hybrid MLM</p>
+                    </div>
+                </div>
+                <div class="bg-slate-800 p-3.5 rounded-xl border border-slate-700/60 flex items-center space-x-3">
+                    <div class="p-2 bg-amber-500/10 text-amber-400 rounded-lg">
+                        <i data-lucide="wallet" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400">Pembayaran</p>
+                        <p class="text-sm font-bold text-white">Rupiah & USDT</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Katalog Paket Bisnis -->
+            <div>
+                <h3 class="text-sm font-bold mb-3 flex items-center text-slate-200">
+                    <i data-lucide="package" class="w-4 h-4 mr-1.5 text-blue-400"></i> Paket Kemitraan
+                </h3>
+                <div class="space-y-3">
+                    <!-- Paket 1 -->
+                    <div class="bg-slate-800 rounded-xl p-4 border border-slate-700 hover:border-blue-500/50 transition">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded">STARTER</span>
+                                <h4 class="font-bold text-base text-white mt-1">Paket Basic Crypto</h4>
+                            </div>
+                            <p class="text-emerald-400 font-extrabold text-sm">Rp 250.000</p>
+                        </div>
+                        <ul class="text-xs text-slate-300 mt-3 space-y-1">
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> Hak Usaha / Member ID</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> Akses Modul Edukasi Kripto Dasar</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> Web Landing Page Personal</li>
+                        </ul>
+                        <button onclick="registerPackage('Paket Basic Crypto')" class="w-full mt-3 bg-slate-700 hover:bg-blue-600 text-white text-xs font-semibold py-2 rounded-lg transition">
+                            Pilih Paket
+                        </button>
+                    </div>
+
+                    <!-- Paket 2 -->
+                    <div class="bg-slate-800 rounded-xl p-4 border border-amber-500/30 hover:border-amber-500/70 transition">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="bg-amber-500/10 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded">BEST SELLER</span>
+                                <h4 class="font-bold text-base text-white mt-1">Paket Pro Trader & Leader</h4>
+                            </div>
+                            <p class="text-emerald-400 font-extrabold text-sm">Rp 1.000.000</p>
+                        </div>
+                        <ul class="text-xs text-slate-300 mt-3 space-y-1">
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> Semua Fasilitas Starter</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> Komisi Sponsor & Bonus Pairing Maksimal</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> Group Mentoring Eksklusif Telegram</li>
+                        </ul>
+                        <button onclick="registerPackage('Paket Pro Trader & Leader')" class="w-full mt-3 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-bold py-2 rounded-lg shadow transition">
+                            Pilih Paket
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT 2: EDUKASI CRYPTO -->
+        <div id="tab-crypto" class="tab-content hidden space-y-4">
+            <h3 class="text-sm font-bold text-slate-200 flex items-center">
+                <i data-lucide="book-open" class="w-4 h-4 mr-1.5 text-indigo-400"></i> Modul Edukasi CryptoDigital
+            </h3>
+
+            <div class="space-y-3">
+                <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2.5 bg-blue-500/10 text-blue-400 rounded-lg">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">1. Dasar Keamanan Kripto</h4>
+                            <p class="text-xs text-slate-400">Pentingnya Passphrase, menghindari Scam/Spam deposit, dan mengamankan wallet.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2.5 bg-emerald-500/10 text-emerald-400 rounded-lg">
+                            <i data-lucide="arrow-right-left" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">2. Transaksi & Stablecoin (USDT)</h4>
+                            <p class="text-xs text-slate-400">Cara mengirim dan menerima komisi aset digital melalui jaringan TRC20/BEP20.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2.5 bg-purple-500/10 text-purple-400 rounded-lg">
+                            <i data-lucide="briefcase" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">3. Kerjaan Digital Tanpa Deposit</h4>
+                            <p class="text-xs text-slate-400">Akses info tugas mikro, testing aplikasi, dan peran komunitas bergaji USDT.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT 3: ALAT BANTU PROSPEK -->
+        <div id="tab-tools" class="tab-content hidden space-y-4">
+            <h3 class="text-sm font-bold text-slate-200 flex items-center">
+                <i data-lucide="wrench" class="w-4 h-4 mr-1.5 text-emerald-400"></i> Tool Kits & Script WhatsApp
+            </h3>
+
+            <!-- Script Generator -->
+            <div class="bg-slate-800 rounded-xl p-4 border border-slate-700 space-y-3">
+                <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Template Chat Mengundang Prospek</h4>
+                <div class="bg-slate-900 p-3 rounded-lg border border-slate-700 text-xs text-slate-300 font-mono relative">
+                    <p id="scriptText">"Halo! Saya sedang mengembangkan proyek edukasi bisnis MLM & Aset Digital tanpa modal awal besar. Mau lihat presentasi singkatnya lewat HP?"</p>
+                </div>
+                <button onclick="copyScript()" class="w-full bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs font-semibold py-2 rounded-lg flex justify-center items-center space-x-1 transition">
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    <span id="copyBtnText">Salin Script WhatsApp</span>
+                </button>
+            </div>
+
+            <!-- Jadwal Event -->
+            <div class="bg-slate-800 rounded-xl p-4 border border-slate-700 space-y-2">
+                <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Jadwal Presentation (LOP Online)</h4>
+                <div class="flex justify-between items-center bg-slate-900 p-2.5 rounded-lg">
+                    <div>
+                        <p class="text-xs font-bold text-white">Webinar LOP & Edukasi Digital</p>
+                        <p class="text-[10px] text-slate-400">Setiap Rabu & Sabtu | 19.30 WIB</p>
+                    </div>
+                    <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-bold px-2 py-1 rounded">Via Zoom</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT 4: FORM DAFTAR MITRA -->
+        <div id="tab-register" class="tab-content hidden space-y-4">
+            <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                <h3 class="text-base font-bold text-white mb-1">Pendaftaran Mitra Baru</h3>
+                <p class="text-xs text-slate-400 mb-4">Isi data di bawah ini untuk pendaftaran tim & pembuatan akun support system.</p>
+
+                <form id="leadForm" onsubmit="handleFormSubmit(event)" class="space-y-3">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Nama Lengkap</label>
+                        <input type="text" id="fullName" required placeholder="Contoh: Budi Santoso" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Nomor WhatsApp</label>
+                        <input type="tel" id="whatsappNo" required placeholder="08123456789" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Kota / Domisili</label>
+                        <input type="text" id="city" required placeholder="Contoh: Jakarta" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Pilihan Paket Kemitraan</label>
+                        <select id="selectedPkg" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500">
+                            <option value="Paket Basic Crypto (Rp 250rb)">Paket Basic Crypto (Rp 250rb)</option>
+                            <option value="Paket Pro Trader (Rp 1 Juta)">Paket Pro Trader & Leader (Rp 1 Juta)</option>
+                            <option value="Konsultasi Terlebih Dahulu">Konsultasi Terlebih Dahulu</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xs py-2.5 rounded-lg shadow-md transition flex justify-center items-center space-x-1">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        <span>Kirim Pendaftaran via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-slate-800/95 backdrop-blur-md border-t border-slate-700 z-50">
+        <div class="max-w-md mx-auto grid grid-cols-4 text-center py-2 text-slate-400">
+            <button onclick="switchTab('home')" id="nav-home" class="flex flex-col items-center justify-center space-y-1 active-tab">
+                <i data-lucide="home" class="w-5 h-5"></i>
+                <span class="text-[10px]">Beranda</span>
+            </button>
+            <button onclick="switchTab('crypto')" id="nav-crypto" class="flex flex-col items-center justify-center space-y-1">
+                <i data-lucide="cpu" class="w-5 h-5"></i>
+                <span class="text-[10px]">Edukasi</span>
+            </button>
+            <button onclick="switchTab('tools')" id="nav-tools" class="flex flex-col items-center justify-center space-y-1">
+                <i data-lucide="wrench" class="w-5 h-5"></i>
+                <span class="text-[10px]">Tools</span>
+            </button>
+            <button onclick="switchTab('register')" id="nav-register" class="flex flex-col items-center justify-center space-y-1">
+                <i data-lucide="user-plus" class="w-5 h-5"></i>
+                <span class="text-[10px]">Daftar</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Script Application Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navigation Switch Tab Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            document.querySelectorAll('nav button').forEach(el => {
+                el.classList.remove('active-tab');
+            });
+            document.getElementById('nav-' + tabId).classList.add('active-tab');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Register package quick button
+        function registerPackage(pkgName) {
+            document.getElementById('selectedPkg').value = pkgName;
+            switchTab('register');
+        }
+
+        // Script Copy Function
+        function copyScript() {
+            const text = document.getElementById('scriptText').innerText;
+            navigator.clipboard.writeText(text);
+            const btnText = document.getElementById('copyBtnText');
+            btnText.innerText = 'Berhasil Disalin!';
+            setTimeout(() => {
+                btnText.innerText = 'Salin Script WhatsApp';
+            }, 2000);
+        }
+
+        // Submit form via WhatsApp
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('whatsappNo').value;
+            const city = document.getElementById('city').value;
+            const pkg = document.getElementById('selectedPkg').value;
+
+            // Nomor Admin Target (Dapat disesuaikan)
+            const adminPhone = "6281234567890";
+
+            const message = `Halo Admin, Saya ingin mendaftar Mitra CryptoDigital MLM:%0A%0A` +
+                `*Nama:* ${name}%0A` +
+                `*No. WA:* ${phone}%0A` +
+                `*Kota:* ${city}%0A` +
+                `*Pilihan Paket:* ${pkg}%0A%0A` +
+                `Mohon panduan langkah selanjutnya. Terima kasih!`;
+
+            window.open(`https://wa.me/${adminPhone}?text=${message}`, '_blank');
+        }
+
+        // Download / Save App Notification
+        function downloadAppInfo() {
+            alert("Sistem Siap Digunakan!\n\nUntuk menginstal di HP:\n1. Buka file index.html ini di browser Chrome/Safari di HP kamu.\n2. Pilih menu browser (titik tiga) -> 'Tambahkan ke Layar Utama' / 'Add to Home Screen'.");
+        }
+    </script>
+</body>
+</html>
